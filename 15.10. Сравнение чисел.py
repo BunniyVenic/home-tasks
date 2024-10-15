@@ -5,6 +5,6 @@ fourth = int(input('Введите четвертое число: '))
 def max_num():
   num1 = max(first, second)
   return num1
-max_num()
+num3=max_num()
 num2=max(third,fourth)
-max(num1,num2)
+print(max(num3,num2))
