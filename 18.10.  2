@@ -1,0 +1,18 @@
+a=int(input('Введите первое число: '))
+b=int(input('Введите второе число: '))
+def rec(x):
+    if a>b:
+        print (b)
+        rec (b+1)
+        print (b)
+        if b==a:
+            return 0
+        else:return 0
+    else:print (a)
+    rec (a+1)
+    print (a)
+    if a==b:
+        return 0
+    else:return 0
+
+rec(1)
