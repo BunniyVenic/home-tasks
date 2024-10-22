@@ -1,0 +1,74 @@
+##задача
+##написать программу которая имитирует работу кафе или ресторана
+##пропишите меню для пользователя, используйте словари и функции , а также декоратор для отображения чека
+##пользователь выбирает из словаря какие он хочет купить продукты,
+##после того как пользователь закончил свой выбор, код должен предложить ему оплатить покупки, если пользователь выбирает безналичный расчёт,
+##то мы ему отдаём чек (для чека используйте декоратор чтобы вывод был красивым ) если был наличный расчёт то в чеке пропишите сдачу.
+from itertools import product
+
+menu = {
+    "Кофе": 100,
+    "Чай": 50,
+    "Пирожок": 75,
+    "Сэндвич": 150,
+    "Сок": 120
+}
+
+def display_p(produckti):
+        print("Список продуктов:")
+        print(menu)
+
+def add_p(produckti):
+    product = input("Введите товар, который хотите добавить: ")
+    produckti.append(product)
+    print(f"товар '{product}' добавлен в список.")
+
+def remove_p(books):
+    display_p(product)
+    if product:
+        try:
+            index = int(input("Введите товар, который хотите удалить: ")) - 1
+            if 0 <= index < len(books):
+                removed_book = books.pop(index)
+                print(f"Книга '{removed_book}' удалена из списка.")
+            else:
+                print("Ошибка!")
+
+def open_busket(produckti):
+    if not produckti:
+        print('Корзина пуста')
+    else:
+        for index, product in enumerate(produckti, start=1):
+            print(f"{index}. {product}")
+
+def pay_for_produckti():
+    total = sum(price for _, price in produckti)
+    print(f'Общая стоимость всех товаров: {total} рублей.')
+
+
+def main():
+    produckti = []
+
+    while True:
+        print("Выберите действие:")
+        print("1. Вывести список товаров")
+        print("2. Добавить товар")
+        print("3. Удалить товар")
+        print("4. оплатить")
+        print("5. открыть корзину")
+
+        choice = input("Введите номер действия: ")
+
+        if choice == '1':
+            display_p(produckti)
+        elif choice == '2':
+            add_p(produckti)
+        elif choice == '3':
+            remove_p(produckti)
+        elif choice == '4':
+            pay_for_produckti(produckti)
+        elif choice == '5':
+            open_busket(produckti)
+        else:
+            print("Ошибка!")
+
