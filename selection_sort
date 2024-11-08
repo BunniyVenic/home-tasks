@@ -1,0 +1,28 @@
+import time
+import random
+
+
+lr = int(input("Введите длинну списка "))
+lst = []
+for i in range(lr):
+    lst.append(random.randint(1,100))
+
+data = list(set(lst))
+data.sort()
+print(data)
+
+start_time = time.time()
+
+def selection_sort(nums):
+    for i in range(len(nums)):
+        lowest_value_index = i
+        for j in range(i + 1, len(nums)):
+            if nums[j] < nums[lowest_value_index]:
+                lowest_value_index = j
+        nums[i], nums[lowest_value_index] = nums[lowest_value_index], nums[i]
+
+random_list_of_nums = data
+selection_sort(random_list_of_nums)
+print(random_list_of_nums)
+
+end_time = time.time()
