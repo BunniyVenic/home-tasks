@@ -1,0 +1,32 @@
+import time
+import random
+
+
+lr = int(input("Введите длинну списка "))
+lst = []
+for i in range(lr):
+    lst.append(random.randint(1,100))
+
+data = list(set(lst))
+data.sort()
+print(data)
+
+start_time = time.time()
+
+def insertion_sort(nums):
+    for i in range(1, len(nums)):
+        item_to_insert = nums[i]
+        j = i - 1
+        while j >= 0 and nums[j] > item_to_insert:
+            nums[j + 1] = nums[j]
+            j -= 1
+        nums[j + 1] = item_to_insert
+
+random_list_of_nums = data
+insertion_sort(random_list_of_nums)
+print(random_list_of_nums)
+
+end_time = time.time()
+execution_time = end_time - start_time
+
+print(f"Время выполнения программы: {execution_time} секунд")
