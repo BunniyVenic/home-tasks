@@ -1,0 +1,34 @@
+lst=['т','о','л','п','а']
+def johnson_trotter(s):
+    n = len(s)
+    perm = list(s) # передача списка
+    direction = [-1] * n  # -1 — движение влево, 1 — вправо
+
+    def get_largest_mobile():
+        largest = ''
+        index = -1
+        for i in range(n):
+            new_pos = i + direction[i]
+            if 0 <= new_pos < n and perm[i] > perm[new_pos] and perm[i] > largest:
+                largest = perm[i]
+                index = i
+        return index
+
+    while True:
+        print(''.join(perm))  # Вывод перестановки
+
+        k = get_largest_mobile()
+        if k == -1:
+            return  # проверка об окончании перерстановок
+
+        # перестановка
+        new_pos = k + direction[k]
+        perm[k], perm[new_pos] = perm[new_pos], perm[k]
+        direction[k], direction[new_pos] = direction[new_pos], direction[k]
+
+        # Инвертирование направления
+        for i in range(n):
+            if perm[i] > perm[new_pos]:
+                direction[i] *= -1
+
+johnson_trotter('толпа')
