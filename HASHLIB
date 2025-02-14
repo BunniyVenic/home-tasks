@@ -1,0 +1,40 @@
+import json
+import hashlib
+
+
+def reg():
+    print('Введите логин:')
+    RegLog=input('-')
+    print('Введите пароль:')
+    password=input('-')
+    hash_object = hashlib.sha1()
+    hash_object.update(f'{password}'.encode())
+    passwordHash = hash_object.hexdigest()
+
+    data = {
+        "LOGIN": RegLog,
+        "PASSWORDHASH": passwordHash
+    }
+
+    with open('users256.json', 'w', encoding='utf-8') as json_file:
+        json.dump(data, json_file, ensure_ascii=False, indent=8)
+
+def main():
+    print('Здравствуйте!')
+    print('Введите 1 чтобы зарегистрироваться и 0 чтобы войти.')
+    first= int(input('-'))
+    if first == 1:
+        reg()
+    elif first == 0:
+        #log()
+        pass
+    else: print('Ошибка! Перезагрузите и попробуйте снова.')
+main()
+
+import hashlib
+
+hash_object = hashlib.sha256()
+
+hash_object.update(b'Hello')
+
+hex_dig = hash_object.hexdigest()
