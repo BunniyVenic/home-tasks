@@ -1,0 +1,9 @@
+message = input()
+
+class Person:  # определение класса Person
+    def say(self, message):  # метод
+        print(message)
+
+
+tom = Person()
+tom.say(message)
