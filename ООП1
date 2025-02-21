@@ -1,0 +1,17 @@
+class Person:
+
+    def __init__(self, name, age, IQ, HasHome):
+        self.name = name  # имя человека
+        self.age = age  # возраст человека
+        self.IQ = IQ
+        self.HasHome = HasHome
+
+
+tom = Person("Tom", 22, -12, 'no')
+bob = Person("Bob", 43, 999, 'yes')
+Alexsandr = Person("Alexsandr", 22, 999, 'yes')
+
+print(tom.name)
+print(tom.HasHome)
+print(bob.name)
+print(bob.HasHome)
