@@ -1,0 +1,24 @@
+class Car:
+    def __init__(self, color, brand, has_pelmeny_in_the_back, engine, max_speed):
+        self.color = color
+        self.brand = brand
+        self.has_pelmeny_in_the_back = has_pelmeny_in_the_back
+        self.engine = engine
+        self.max_speed = max_speed
+    def display_info(self):
+        print(f"Цвет: {self.color} Бренд: {self.brand} Есть пельмени в багажнике: {self.has_pelmeny_in_the_back} Двигатель: {self.engine} Максимальная скорость: {self.max_speed}")
+    def engine_on(self):
+        print("Двигатель включен")
+    def lights_on(self):
+        print("Фары включены")
+Car1 = Car('blue','BMW','NOOO','3,5 litrov','250 km/h')
+Car2 = Car('white','Hentay','NOOO','5 litrov','200 km/h')
+Car3 = Car('red','Toyota','YES','4,5 litrov','235 km/h')
+
+Car1.display_info()
+Сar2.display_info()
+Сar3.display_info()
+
+# Вызываем методы для одной из машин
+car1.drive()
+car1.light()
