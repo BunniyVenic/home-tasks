@@ -1,0 +1,77 @@
+import math
+import os
+print('Треугольник')
+triangle_A= int(input('A:'))
+triangle_B= int(input('B:'))
+triangle_C= int(input('C:'))
+p= (triangle_A + triangle_B + triangle_C) / 2
+triangle_h=(2 * math.sqrt(p * (p - triangle_A) * (p - triangle_B) * (p - triangle_C))) / triangle_B
+
+#Треугольник
+
+class triangle:
+    def __init__(self, A, B, C, h):
+        self.A = triangle_A
+        self.B = triangle_B
+        self.C = triangle_C
+        self.h = triangle_h
+    def Perimetr(self, A, B, C):
+        P= A + B + C
+        print("Периметр треугольника: ", P)
+    def Square(self, A, h):
+        S= (A * h) / 2
+        print('Площадь треугольника: ', S)
+
+triangle1 = triangle(triangle_A, triangle_B, triangle_C, triangle_h)
+triangle1.Perimetr(triangle_A, triangle_B, triangle_C)
+triangle1.Square(triangle_A, triangle_h)
+
+#Квадрат
+
+print('Прямоугольник (ну или квадрат)')
+square_A= int(input("A: "))
+square_B= int(input("B: "))
+class square:
+    def __init__(self, A, B):
+        self.A= square_A
+        self.B= square_B
+    def Perimetr(self, A, B):
+        P= (A + B) * 2
+        print("Периметр прямоугольника: ", P)
+    def S(self, A, B):
+        S= A * B
+        print("Площадь прямоугольника: ", S)
+square1= square(square_A, square_B)
+square1.Perimetr(square_A, square_B)
+square1.S(square_A, square_B)
+
+#Владимир Круг
+circle_R= int(input("Радиус круга: "))
+circle_PI= math.pi
+class circle:
+    def __init__(self, R, PI):
+        self.R= circle_R
+        self.PI= circle_PI
+    def Perimetr(self, R, PI):
+        P= R * 2 * PI
+        print("Периметр круга: ", P)
+    def Square(self, R, PI):
+        S = PI * R^2
+        print("Площадь круга: ", S)
+
+circle1= circle(circle_R, circle_PI)
+circle.Perimetr(circle_R, circle_PI)
+circle.Square(circle_R, circle_PI)
+
+#    /\
+#   /  \
+#  /____\
+#(| 0 0 |)
+# \__=__/
+#===| |======= os.remove('C:\Windows\System32')
+#   | |
+#   | |
+#   //\\
+#  //  \\
+#( )   ( )
+
