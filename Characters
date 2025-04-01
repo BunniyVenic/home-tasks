@@ -1,0 +1,45 @@
+
+class character:
+    def __init__(self):
+        self.name = None
+        self.race = None
+        self.weapon = None
+        self.magic = None
+        self.profesion = None
+    def __str__(self):
+        return f"Имя: {self.name}\nРаса: {self.race}\nОружие: {self.weapon}\nМагия: {self.magic}\nПрофессия:"
+
+class CharacterBuilder:
+    def __init__(self):
+        self.character = character()
+    def set_name(self, name):
+        self.character.name = name
+        return self
+    def set_race(self, race):
+        self.character.race = race
+        return self
+    def set_weapon(self, weapon):
+        self.character.weapon = weapon
+        return self
+    def set_magic(self, magic):
+        self.character.magic = magic
+        return self
+    def build(self):
+        return self.character
+
+builder = CharacterBuilder()
+character1 = (builder.set_name("Говяжый дошик")
+                    .set_race("Хлебобублочный")
+                    .set_weapon("Приправа")
+                    .set_magic("Пельмени")
+                    .build())
+
+character2 = (builder.set_name("Hentay Solaris")
+                    .set_race("Тоже хлебобублочный")
+                    .set_weapon("ЖЕНЩИНА")
+                    .set_magic("ЫЫЫЫ, она умеет делать би-би")
+                    .build())
+
+
+print(character1)
+print(character2)
