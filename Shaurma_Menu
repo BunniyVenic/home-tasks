@@ -1,0 +1,32 @@
+class shaurma:
+    def __init__(self):
+        self.name = None
+        self.cost = None
+        self.level_of_severity = None
+        self.description = None
+
+    def __str__(self):
+        return f"Название: {self.name}\nЦена: {self.cost}\nУровень остроты: {self.level_of_severity}\nОписание: {self.description}\n"
+
+class shaurmaBuilder():
+    def __init__(self):
+        self.shaurma = shaurma()
+    def set_name(self,name):
+        self.shaurma.name = name
+        return self
+    def set_cost(self, cost):
+        self.shaurma.cost = cost
+    def set_level_of_severity(self, level_of_severity):
+        self.shaurma.level_of_severity = level_of_severity
+    def set_description(self, description):
+        self.shaurma.description = description
+    def build(self):
+        return self.shaurma
+
+builder = shaurmaBuilder()
+shaurma = (builder.set_name("Класическа")
+                    .set_cost("Маленькая:350, Средняя:400, Большая:450")
+                    .set_level_of_severity("0")
+                    .set_description("Класический поджаренный лаваш, свежий огурчик, листья салата, свежий томат, жаренная курочка, Фирменный соус..")
+                    .build())
+print(shaurma)
