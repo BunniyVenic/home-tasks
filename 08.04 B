@@ -1,0 +1,31 @@
+class message:
+    def __init__(self, name, hello):
+        self.name = name
+        self.hello = hello
+    def display_hello(self):
+        print(f"{self.name}: {self.hello}")
+
+
+
+user1 = message('Вася', 'Добрый день')
+user2 = message('Коля', 'Добрый вечер')
+user3 = message('ЖАМШУТ', 'أبيع الموز والبطيخ والناس، أمزح، أنا لا أبيع الموز')
+user1.display_hello()
+user2.display_hello()
+user3.display_hello()
+
+class message2:
+    def __init__(self, name, BUYBUY):
+        self.name = name
+        self.BUYBUY = BUYBUY
+
+    def display_BUYBUY(self):
+        print(f"{self.name}: {self.BUYBUY}")
+
+
+user1 = message2('Вася', 'Досвидания')
+user2 = message2('Коля', 'Пока пока')
+user3 = message2('ЖАМШУТ', 'أرسل تحياتي القلبية إلى والدتي ووالدي ألكسندر ألكسندروفيتش وجدتي وحجري المفضل.')
+user1.display_BUYBUY()
+user2.display_BUYBUY()
+user3.display_BUYBUY()
