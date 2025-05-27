@@ -1,0 +1,10 @@
+import tkinter as tk
+
+def on_enter(event):
+    label.config(text="Hello World!")
+root = tk.Tk()
+root.title("Press Enter")
+label = tk.Label(root, text="")
+label.pack()
+root.bind('<Return>', on_enter)
+root.mainloop()
