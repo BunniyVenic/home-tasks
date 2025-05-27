@@ -1,0 +1,35 @@
+import tkinter as tk
+operation = None
+def set_operation(op):
+    global operation
+    operation = op
+def calculate():
+    num1 = float(entry1.get())
+    num2 = float(entry2.get())
+    if operation == "+":
+        result = num1 + num2
+    elif operation == "-":
+        result = num1 - num2
+    else:
+        result_label.config(text="Выберите операцию")
+        return
+    result_label.config(text=f"Результат: {result}")
+
+root = tk.Tk()
+root.title("Калькулятор")
+
+entry1 = tk.Entry(root)
+entry1.pack(pady=5)
+
+entry2 = tk.Entry(root)
+entry2.pack(pady=5)
+plus_button = tk.Button(root, text="+", command=lambda: set_operation("+"))
+plus_button.pack(side=tk.LEFT, padx=5)
+minus_button = tk.Button(root, text="-", command=lambda: set_operation("-"))
+minus_button.pack(side=tk.LEFT, padx=5)
+equale_button = tk.Button(root, text="=", command=calculate)
+equale_button.pack(side=tk.LEFT, padx=5)
+result_label = tk.Label(root, text="")
+result_label.pack(pady=10)
+
+root.mainloop()
