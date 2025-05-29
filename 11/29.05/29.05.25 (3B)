@@ -1,0 +1,20 @@
+class say_hi_and_bye():
+    def __init__(self, name, Hello, bye):
+        self.name = name
+        self.Hello = Hello
+        self.Bye = bye
+    def sayhi(self):
+        print(f"{self.name} : {self.Hello}")
+    def saybye(self):
+        print(f"{self.name}: {self.bye}")
+say_hi1 = say_hi_and_bye('Водопьянов Александр', 'Мне сырно мятно пряный бонбон на безлактозном молоке с кусочками дубайского шоколада и шепотом мальчика гея', '*Улетает в Таиланд*')
+say_hi2 = say_hi_and_bye('Вася', 'Добрый день', 'Пока')
+say_hi3 = say_hi_and_bye('Коля','Добрый вечер', 'Покакать')
+
+say_hi1.sayhi()
+say_hi2.sayhi()
+say_hi3.sayhi()
+
+say_hi1.saybye()
+say_hi2.saybye()
+say_hi3.saybye()
