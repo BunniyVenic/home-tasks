@@ -1,0 +1,8 @@
+class say_hi():
+    def __init__(self, name,Hello):
+        self.name = name
+        self.Hello = Hello
+    def sayhi(self, name, Hello):
+        print(name, ":",Hello)
+say_hi1 = say_hi('Nigamen', '*Читает реп*')
+say_hi1.sayhi()
