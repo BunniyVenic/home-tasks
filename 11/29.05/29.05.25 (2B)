@@ -1,0 +1,13 @@
+class say_hi():
+    def __init__(self, name,Hello):
+        self.name = name
+        self.Hello = Hello
+    def sayhi(self):
+        print(f"{self.name} : {self.Hello}")
+say_hi1 = say_hi('Водопьянов Александр', 'Мне сырно мятно пряный бонбонна безлактозном молоке с кусочками дубайского шоколада и шепотом мальчика гея')
+say_hi2 = say_hi('Вася', 'Добрый день')
+say_hi3 = say_hi('Коля','Добрый вечер')
+
+say_hi1.sayhi()
+say_hi2.sayhi()
+say_hi3.sayhi()
