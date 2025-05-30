@@ -1,0 +1,22 @@
+subjects = ['математика', 'информатика', 'русский']
+
+combinations = []
+for i in range(len(subjects)):
+    for j in range(i, len(subjects)):
+        combinations.append((subjects[i], subjects[j]))
+
+print("С повторениями:")
+for c in combinations:
+    print(c)
+
+grafics = set()
+for pair in combinations:
+    if pair[0] == pair[1]:
+        grafics.add(pair)
+    else:
+        grafics.add(pair)
+        grafics.add((pair[1], pair[0]))
+print(" ")
+print("Все варианты расписания:")
+for i, schedule in enumerate(grafics, 1):
+    print(f" {schedule[0]} и {schedule[1]}")
