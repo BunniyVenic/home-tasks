@@ -1,0 +1,19 @@
+import random
+
+def sdvig(matrix):
+    if not matrix:
+        return matrix
+    first_row = matrix[0]
+    for i in range(len(matrix) - 1):
+        matrix[i] = matrix[i + 1]
+    matrix[-1] = first_row
+    return matrix
+
+N = 3
+matrix = [[random.randint(1, 9) for _ in range(N)] for _ in range(N)]
+for row in matrix:
+    print(row)
+print(" ")
+shifted = sdvig(matrix)
+for row in shifted:
+    print(row)
