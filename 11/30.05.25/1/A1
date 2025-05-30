@@ -1,0 +1,45 @@
+import random
+import time
+
+lr = 10
+lst = []
+for i in range(lr):
+    lst.append(random.randint(-100,100))
+print(lst)
+
+start_time = time.perf_counter()
+
+print("Пузырьковая сортировка:")
+
+def bubble_sort(nums):
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(len(nums) - 1):
+            if nums[i] > nums[i + 1]:
+                nums[i], nums[i + 1] = nums[i + 1], nums[i]
+                swapped = True
+
+
+random_list_of_nums =lst
+bubble_sort(random_list_of_nums)
+print(random_list_of_nums)
+
+end_time = time.perf_counter()
+execution_time = end_time - start_time
+print(f"Время выполнения: {execution_time:.7f} секунд")
+
+start_time = time.perf_counter()
+
+print("Метод sort:")
+lst.sort()
+print(lst)
+
+end_time = time.perf_counter()
+execution_time2 = end_time - start_time
+print(f"Время выполнения: {execution_time2:.7f} секунд")
+
+if execution_time < execution_time2:
+    print(f"Пузырьковая сортировка быстрее на {execution_time2-execution_time:.6f}")
+else:
+    print(f"Метод sort быстрее на {execution_time-execution_time2:.6f}")
